@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.ishland.uwrad.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "plugin": "com.ishland.uwrad.TheMixinPlugin",
+  "mixins": [
+    "MixinWorld"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
