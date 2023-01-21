@@ -23,9 +23,9 @@ public class TheMixinPlugin implements IMixinConfigPlugin {
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
         try {
             Class.forName("com.ishland.c2me.fixes.worldgen.threading_issues.common.CheckedThreadLocalRandom");
-            return true;
-        } catch (ClassNotFoundException e) {
             return false;
+        } catch (ClassNotFoundException e) {
+            return true;
         }
     }
 
