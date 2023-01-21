@@ -9,8 +9,8 @@
     "ishland"
   ],
   "contact": {
-    "sources": "https://github.com/FabricMC/fabric-example-mod",
-    "issues": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/RelativityMC/unsafe-world-random-access-detector",
+    "issues": "https://github.com/RelativityMC/unsafe-world-random-access-detector/issues"
   },
 
   "license": "MIT",
