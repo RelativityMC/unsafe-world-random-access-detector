@@ -4,6 +4,7 @@ import net.fabricmc.loader.api.FabricLoader;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
+import org.spongepowered.asm.mixin.transformer.ClassInfo;
 
 import java.util.List;
 import java.util.Set;
@@ -21,12 +22,7 @@ public class TheMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        try {
-            Class.forName("com.ishland.c2me.fixes.worldgen.threading_issues.common.CheckedThreadLocalRandom");
-            return false;
-        } catch (ClassNotFoundException e) {
-            return true;
-        }
+        return ClassInfo.forName("com.ishland.c2me.fixes.worldgen.threading_issues.common.CheckedThreadLocalRandom") == null;
     }
 
     @Override
