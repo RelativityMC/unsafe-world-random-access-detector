@@ -54,7 +54,8 @@ public class TheMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        return ClassInfo.forName("com.ishland.c2me.fixes.worldgen.threading_issues.common.CheckedThreadLocalRandom") == null;
+//        return ClassInfo.forName("com.ishland.c2me.fixes.worldgen.threading_issues.common.CheckedThreadLocalRandom") == null;
+        return true;
     }
 
     @Override
