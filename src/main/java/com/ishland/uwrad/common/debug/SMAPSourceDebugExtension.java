@@ -35,8 +35,9 @@
  */
 package com.ishland.uwrad.common.debug;
 
+import cpw.mods.modlauncher.Launcher;
+import cpw.mods.modlauncher.api.IEnvironment;
 import it.unimi.dsi.fastutil.objects.Object2ReferenceOpenHashMap;
-import net.fabricmc.loader.api.FabricLoader;
 import org.jetbrains.annotations.Nullable;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -190,7 +191,7 @@ public class SMAPSourceDebugExtension {
             return null;
         }
         if (path == null) return null;
-        final Path gameDir = FabricLoader.getInstance().getGameDir().toAbsolutePath().normalize();
+        final Path gameDir = Launcher.INSTANCE.environment().getProperty(IEnvironment.Keys.GAMEDIR.get()).orElse(Path.of("."));
         return gameDir.relativize(path).toString();
     }
 

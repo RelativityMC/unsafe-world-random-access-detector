@@ -1,6 +1,7 @@
 package com.ishland.uwrad.common;
 
-import net.fabricmc.loader.api.FabricLoader;
+import cpw.mods.modlauncher.Launcher;
+import cpw.mods.modlauncher.api.IEnvironment;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,7 +18,12 @@ public class Config {
     static {
         final Properties properties = new Properties();
         final Properties newProperties = new Properties();
-        final Path path = FabricLoader.getInstance().getConfigDir().resolve("uwrad.properties");
+        final Path configDir = Launcher.INSTANCE.environment().getProperty(IEnvironment.Keys.GAMEDIR.get()).orElse(Path.of(".")).resolve("config");
+        try {
+            Files.createDirectories(configDir);
+        } catch (IOException ignored) {
+        }
+        final Path path = configDir.resolve("uwrad.properties");
         if (Files.isRegularFile(path)) {
             try (InputStream in = Files.newInputStream(path, StandardOpenOption.CREATE)) {
                 properties.load(in);

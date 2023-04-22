@@ -1,10 +1,8 @@
 package com.ishland.uwrad;
 
-import net.fabricmc.api.ModInitializer;
+import net.minecraftforge.fml.common.Mod;
 
-public class TheMod implements ModInitializer {
-    @Override
-    public void onInitialize() {
+@Mod("unsafe_world_random_access_detector")
+public class TheMod {
 
-    }
 }
