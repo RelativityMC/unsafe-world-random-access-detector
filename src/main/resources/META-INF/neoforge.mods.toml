@@ -1,7 +1,7 @@
 # This is an example mods.toml file.
 # Any fields that aren't annotated with #optional are *required*!
 modLoader = "javafml"
-loaderVersion = "[50,)"
+loaderVersion = "[4,)"
 license = "MIT" # Want to make your mod open source? Check out https://choosealicense.com/!
 
 # This is a URL to e.g. your GitHub or CurseForge issues page.
@@ -17,7 +17,7 @@ version = "${version}"
 displayName = "Unsafe World Random Access Detector"
 # This URL will be queried by the Forge update checker in order to find the latest version of your mod.
 # If an update is found, you'll see a little blinking "emerald" symbol on your Mods button!
-updateJSONURL="https://api.modrinth.com/updates/MsGuTgPJ/forge_updates.json" #optional
+#updateJSONURL="https://api.modrinth.com/updates/MsGuTgPJ/forge_updates.json" #optional # TODO neoforge
 # This is your mod's "homepage" and will be displayed on the mod's information screen in the Mods panel.
 displayURL="https://github.com/RelativityMC/unsafe-world-random-access-detector" #optional
 # This will be displayed as your mod's logo in the Mods panel.
@@ -31,15 +31,18 @@ description = '''
 This is a mod that detects unsafe off-thread world random access, helping to find causes of "Accessing LegacyRandomSource from multiple threads" crash.
 '''
 
+[[mixins]]
+config = "unsafe-world-random-access-detector.mixins.json"
+
 # An (optional) dependency for your mod. Though technically not required,
 # it's always helpful to add these to stop your mod from loading when something is missing
 # rather than erroring out later
 [[dependencies.unsafe_world_random_access_detector]]
-modId = "forge"
+modId = "neoforge"
 mandatory = true # do you **need** this mod to be able to launch?
 # A version range using interval notation.
 # Brackets mean "inclusive" bounds, while parentheses mean "exclusive".
-versionRange = "[50,)"
+versionRange = "[21,)"
 ordering = "NONE" # Use this if you want your mod to be loaded specifically BEFORE or AFTER another mod
 side = "BOTH" # Specify where this mod is required: can be BOTH, CLIENT or SERVER
 
@@ -47,6 +50,6 @@ side = "BOTH" # Specify where this mod is required: can be BOTH, CLIENT or SERVE
 [[dependencies.unsafe_world_random_access_detector]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.20.6,)"
+versionRange = "[1.21,)"
 ordering = "NONE"
 side = "BOTH"
