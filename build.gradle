@@ -69,8 +69,7 @@ java {
 				"Specification-Version"   : "1",
 				"Implementation-Title"    : project.name,
 				"Implementation-Version"  : version,
-				"Implementation-Vendor"   : project.mod_author,
-				"Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+				"Implementation-Vendor"   : project.mod_author
 		])
 	}
 }
