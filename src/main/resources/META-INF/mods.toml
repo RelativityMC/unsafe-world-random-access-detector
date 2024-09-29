@@ -1,7 +1,7 @@
 # This is an example mods.toml file.
 # Any fields that aren't annotated with #optional are *required*!
 modLoader = "javafml"
-loaderVersion = "[41,)"
+loaderVersion = "[50,)"
 license = "MIT" # Want to make your mod open source? Check out https://choosealicense.com/!
 
 # This is a URL to e.g. your GitHub or CurseForge issues page.
@@ -39,7 +39,7 @@ modId = "forge"
 mandatory = true # do you **need** this mod to be able to launch?
 # A version range using interval notation.
 # Brackets mean "inclusive" bounds, while parentheses mean "exclusive".
-versionRange = "[41,)"
+versionRange = "[50,)"
 ordering = "NONE" # Use this if you want your mod to be loaded specifically BEFORE or AFTER another mod
 side = "BOTH" # Specify where this mod is required: can be BOTH, CLIENT or SERVER
 
@@ -47,8 +47,6 @@ side = "BOTH" # Specify where this mod is required: can be BOTH, CLIENT or SERVE
 [[dependencies.unsafe_world_random_access_detector]]
 modId = "minecraft"
 mandatory = true
-# See above for how to read this notation, this essentially means any
-# version of Minecraft from 1.19.4 (inclusive).
-versionRange = "[1.19,)"
+versionRange = "[1.20.6,)"
 ordering = "NONE"
 side = "BOTH"
