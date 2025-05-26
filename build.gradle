@@ -17,6 +17,9 @@ base {
 loom {
 	neoForge {
 	}
+	mixin {
+		useLegacyMixinAp = true
+	}
 }
 
 repositories {
@@ -78,6 +81,15 @@ jar {
 	from("LICENSE") {
 		rename { "${it}_${project.archives_base_name}"}
 	}
+	manifest {
+		attributes([
+				"MixinConfigs": "unsafe-world-random-access-detector.mixins.json"
+		])
+	}
+}
+
+remapJar {
+	useMixinAP = true
 }
 
 // configure the maven publication
