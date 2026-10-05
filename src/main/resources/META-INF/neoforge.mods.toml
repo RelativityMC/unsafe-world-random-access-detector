@@ -1,6 +1,6 @@
 # This is an example mods.toml file.
 # Any fields that aren't annotated with #optional are *required*!
-modLoader = "javafml"
+modLoader = "lowcodefml"
 loaderVersion = "[4,)"
 license = "MIT" # Want to make your mod open source? Check out https://choosealicense.com/!
 
