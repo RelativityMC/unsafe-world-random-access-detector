@@ -1,8 +1,5 @@
 package com.ishland.uwrad.common;
 
-import cpw.mods.modlauncher.Launcher;
-import cpw.mods.modlauncher.api.IEnvironment;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -18,7 +15,7 @@ public class Config {
     static {
         final Properties properties = new Properties();
         final Properties newProperties = new Properties();
-        final Path configDir = Launcher.INSTANCE.environment().getProperty(IEnvironment.Keys.GAMEDIR.get()).orElse(Path.of(".")).resolve("config");
+        final Path configDir = Path.of(".").resolve("config");
         try {
             Files.createDirectories(configDir);
         } catch (IOException ignored) {

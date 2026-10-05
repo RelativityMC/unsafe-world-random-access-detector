@@ -35,8 +35,6 @@
  */
 package com.ishland.uwrad.common.debug;
 
-import cpw.mods.modlauncher.Launcher;
-import cpw.mods.modlauncher.api.IEnvironment;
 import it.unimi.dsi.fastutil.objects.Object2ReferenceOpenHashMap;
 import org.jetbrains.annotations.Nullable;
 import org.objectweb.asm.tree.ClassNode;
@@ -191,7 +189,7 @@ public class SMAPSourceDebugExtension {
             return null;
         }
         if (path == null) return null;
-        final Path gameDir = Launcher.INSTANCE.environment().getProperty(IEnvironment.Keys.GAMEDIR.get()).orElse(Path.of("."));
+        final Path gameDir = Path.of(".");
         return gameDir.relativize(path).toString();
     }
 
