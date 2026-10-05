@@ -17,6 +17,13 @@ public class MixinWorld {
 
     @Redirect(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/random/Random;create()Lnet/minecraft/util/math/random/Random;", remap = true), remap = false)
     private Random redirectWorldRandomInit() {
+        Class<?> clazz = this.getClass();
+        while (clazz != null) {
+            if (clazz.getName().equals("com.simibubi.create.foundation.virtualWorld.VirtualRenderWorld")) { // stop-gap solution
+                return Random.create();
+            }
+            clazz = clazz.getSuperclass();
+        }
         return new CheckedThreadLocalRandom(RandomSeed.getSeed(), () -> this.thread);
     }
 
